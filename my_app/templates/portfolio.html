@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f8;
+            margin: 0;
+            padding: 40px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+        }
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #444;
+        }
+        .skills {
+            margin-top: 10px;
+        }
+        .skill {
+            background: #4a90e2;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin: 4px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Our Portfolio</h1>
+
+{% for p in partners %}
+<div class="card">
+    <div class="name">{{ p.name }}</div>
+    <div class="skills">
+        {% for skill in p.skills %}
+        <span class="skill">{{ skill }}</span>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+
+</body>
+</html>
