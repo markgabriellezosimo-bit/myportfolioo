@@ -26,8 +26,13 @@
             font-weight: bold;
             color: #444;
         }
-        .skills {
+        .skills-title {
             margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        .skills {
+            margin-top: 5px;
         }
         .skill {
             background: #4a90e2;
@@ -36,6 +41,11 @@
             border-radius: 6px;
             margin: 4px;
             display: inline-block;
+        }
+        .experience {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
         }
     </style>
 </head>
@@ -46,13 +56,18 @@
 {% for p in partners %}
 <div class="card">
     <div class="name">{{ p.name }}</div>
+
+    <div class="skills-title">Skills:</div>
     <div class="skills">
         {% for skill in p.skills %}
         <span class="skill">{{ skill }}</span>
         {% endfor %}
     </div>
+
+    <div class="experience">Experience: {{ p.experience }}</div>
 </div>
 {% endfor %}
 
 </body>
 </html>
+
