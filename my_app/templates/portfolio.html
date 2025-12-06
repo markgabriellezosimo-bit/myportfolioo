@@ -9,7 +9,7 @@
             margin: 0;
             padding: 40px;
         }
-        h1 {
+        h1, h2 {
             text-align: center;
             color: #333;
         }
@@ -26,13 +26,12 @@
             font-weight: bold;
             color: #444;
         }
-        .skills-title {
-            margin-top: 10px;
-            font-weight: bold;
-            color: #333;
+        .description {
+            margin: 10px 0;
+            color: #666;
         }
         .skills {
-            margin-top: 5px;
+            margin-top: 10px;
         }
         .skill {
             background: #4a90e2;
@@ -42,32 +41,25 @@
             margin: 4px;
             display: inline-block;
         }
-        .experience {
-            margin-top: 10px;
-            font-style: italic;
-            color: #666;
-        }
     </style>
 </head>
 <body>
 
 <h1>Our Portfolio</h1>
+<h2>Objective</h2>
+<p style="text-align:center; color:#555;">{{ objective }}</p>
 
 {% for p in partners %}
 <div class="card">
     <div class="name">{{ p.name }}</div>
-
-    <div class="skills-title">Skills:</div>
+    <div class="description">{{ p.description }}</div>
     <div class="skills">
         {% for skill in p.skills %}
         <span class="skill">{{ skill }}</span>
         {% endfor %}
     </div>
-
-    <div class="experience">Experience: {{ p.experience }}</div>
 </div>
 {% endfor %}
 
 </body>
 </html>
-
